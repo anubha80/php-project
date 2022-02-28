@@ -1,0 +1,137 @@
+/* 
+// Revision History
+
+
+// DEVELOPER                      DATE                        COMMENTS
+// Anubha Dubey(2032178)          2022-02-26                Added style properties for index and buy page
+// Anubha Dubey(2032178)          2022-02-28                Added style properties for confirmation page
+// 
+
+*/
+
+
+body {
+    background-color: #E3BEC6;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif;
+    margin: 0;
+    text-align: center;
+}
+.container-main-nav{
+    width: 100%;
+    background-color: #EFDAD7;
+    height: 130px;
+}
+.logo{
+    position: relative;
+    float: left;
+    width: 100px;
+    margin: 15px;
+    padding: 0;
+}
+.navigation a{
+    position: relative;
+    float: right;
+    color: #EA5C2B;
+    padding: 3%;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.company-container{
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.company-name{
+    font-size: 3rem;
+    
+}
+.company-slogan{
+    font-size: 1.5rem;
+}
+.company-name, .company-detail, .company-slogan{
+    margin-left: 10px;
+}
+.company-detail{
+    line-height: 25px;
+}
+.product-img{
+    width: 150px;
+    padding: 2%;
+    border: solid black 2px;
+    background-color: #EFDAD7;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.navigation a:hover{
+    background-color: #2F3A8F;
+}
+
+.copyright{
+    color: grey;
+    letter-spacing: 3px;
+}
+.form-container{
+    padding: 3%;
+    margin: auto;
+    width: 80%;
+    height: auto;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif;
+}
+.field-container{
+}
+.form-heading{
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.form-field{
+    background-color: #EFDAD7;
+    text-align:left;
+    padding: 1%;
+    font-size: large;
+}
+.submit-btn, .reset-btn{
+    margin-top: 10px;
+    padding: 1%;
+    width: 20%;
+    background-color: #EA5C2B;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+}
+.mandatory-field{
+    color: red;
+    font-weight: bolder;
+}
+input{
+    border-radius: 7px;
+    border: none;
+    height: 5%;
+    width: 30%;
+    margin-left: 3%;
+}
+.form-buttons{
+    margin-top: 25px;
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 40%;
+    /* width: 250px; */
+    text-align: right;
+}
+.comment-textarea{
+    border-radius: 7px;
+    border: none;
+    margin-left: 3%;
+}
+.validationError{
+    color: red;
+    font-size: small;
+}
+.order-confirmation{
+    margin-top: 20% ;
+    margin-bottom: 30%;
+}
