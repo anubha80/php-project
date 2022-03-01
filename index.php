@@ -7,6 +7,7 @@
 // Anubha Dubey(2032178)          2022-02-26                Added php common functions, company name and description
 // Anubha Dubey(2032178)          2022-02-28                Updated best seller product image to appear 100%
 // Anubha Dubey(2032178)          2022-02-29                Fixed error in best seller product image, added CSS for the same 
+// Anubha Dubey(2032178)          2022-02-29                Added product name for bestseller 
 //
 
 
@@ -52,7 +53,9 @@ shuffle($product_images);
 
 <?php
 if($product_images[0]=="strawberry-yogo.png"){
+    echo '<h3 class="bestselling-heading">🥇⭐️🏆 BESTSELLER 🏆⭐️🥇</h3>';
     echo '<img alt="yogurt-img" class="bestseller-img" src="Images/'.$product_images[0].'"/>';
+    echo '<p class="bestselling-prod-name">🍓 Strawberry Yogurt 🍓</p>';
 }
 else{
     echo '<img alt="yogurt-img" class="product-img" src="Images/'.$product_images[0].'"/>';
