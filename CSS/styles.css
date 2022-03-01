@@ -5,7 +5,7 @@
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Added style properties for index and buy page
 // Anubha Dubey(2032178)          2022-02-28                Added style properties for confirmation page
-// 
+// Anubha Dubey(2032178)          2022-02-28                Fixed margin for order-confirmation 
 
 */
 
@@ -132,6 +132,6 @@ label{
     font-size: small;
 }
 .order-confirmation{
-    margin-top: 20% ;
-    margin-bottom: 30%;
+    margin-top: 100px ;
+    margin-bottom: 400px;
 }

@@ -5,6 +5,7 @@
 
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Added php common functions, company name and description
+// Anubha Dubey(2032178)          2022-02-28                Updated best seller product image to appear 100% bigger
 
 //
 
@@ -36,7 +37,18 @@ shuffle($product_images);
      Doloremque reprehenderit, <br> laboriosam totam blanditiis temporibus adipisci 
       quos voluptates corporis, cum iure, <br> obcaecati culpa et sint magni sapiente eveniet natus cupiditate perspiciatis?</p>
 </div>
-<a href="https://www.google.ca/" target="_blank"> <img src="<?php echo FOLDER_IMAGES . $product_images[0];?>" class="product-img" alt="yogurt image"> </a>
+<a href="https://www.google.ca/" target="_blank"> 
+    <img src="<?php 
+    if($product_images[0]==$bestSellerProduct){
+        echo FOLDER_IMAGES . $bestSellerProduct;
+   }
+    // echo FOLDER_IMAGES . $product_images[0];
+    else{
+        echo FOLDER_IMAGES . $product_images[0];
+    }
+    
+    ?>" class="product-img" alt="yogurt image"> </a>
 <?php
 footer();
 ?>
+

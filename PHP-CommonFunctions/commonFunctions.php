@@ -28,10 +28,16 @@ function noCache(){
 
 define("PRODUCT_IMAGES",  array("cherry-yogo.png", "greek-yogo.png", "orange-yogo.png", "plain-yogo.png", "strawberry-yogo.png"));
 
+$bestSellerProduct="strawberry-yogo.png";
 
 
 // Generating HTML common code
 // Page Name will go as the title of the page
+
+function checkBestSeller(){
+    echo "testing...";
+}
+
 function TopPage($pageName)
 {
 ?>
