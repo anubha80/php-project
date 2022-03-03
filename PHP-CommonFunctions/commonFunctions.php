@@ -52,7 +52,7 @@ function TopPage($pageName)
         <link rel="stylesheet" type="text/css" href="<?php echo FILE_STYLES; ?>">
     </head>
 
-    <body>
+    <body class="">
     <?php
     navigationMenu();
 }

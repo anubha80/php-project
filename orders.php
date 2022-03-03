@@ -8,6 +8,7 @@
 // Anubha Dubey(2032178)          2022-02-29                Fixed error in best seller product image, added CSS for the same 
 // Anubha Dubey(2032178)          2022-02-29                Added product name for bestseller 
 // Anubha Dubey(2032178)          2022-03-03                Added code to display orders in html table form
+// Anubha Dubey(2032178)          2022-03-03                Fixed extra row error in table
 //
 
 
@@ -77,6 +78,9 @@ if(file_exists(FILE_ORDERS_TXT)){
         $line = fgets($fileHandle);
         $orderArr= json_decode($line);
         echo "<tr>";
+        if (empty($orderArr)) {
+            break;
+        }
         for ($i = 0; $i < 10; $i++) {
             //echo $orderArr[$i]." , ";
             if ($i==5 || $i==7 || $i==8 || $i==9){
@@ -93,7 +97,6 @@ if(file_exists(FILE_ORDERS_TXT)){
     fclose($fileHandle);
     }
 ?>
-
 
 <?php
 //calling footer in the end
