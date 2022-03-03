@@ -69,9 +69,6 @@ if(file_exists(FILE_ORDERS_TXT)){
                 echo "<th>Grand Total</th>";
             echo"</tr>";
 
-
-
-
     //opening orders.txt file
     $fileHandle = fopen(FILE_ORDERS_TXT, "r")
     or die('Cannot open the file...');

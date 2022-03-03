@@ -6,6 +6,7 @@
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Validation of user input done
 // Anubha Dubey(2032178)          2022-02-28                Fixed access error for orders.txt file
+// Anubha Dubey(2032178)          2022-03-03                Fixed comment and price error
 
 
 // constants 
@@ -152,7 +153,7 @@ if (isset($_POST["submitbtn"])) {
         $total = $price*$quantity;
         $taxes = $total*LOCAL_TAX/100;
         $grandTotal = $total + $taxes;
-        $ordersArr = array($productCode, $firstName, $lastName, $city, $price, $comment, $quantity, $total, $taxes ,$grandTotal );
+        $ordersArr = array($productCode, $firstName, $lastName, $city, $comment, $price, $quantity, $total, $taxes ,$grandTotal );
         
         // converting array to string
         $JSONstring = json_encode($ordersArr); 
