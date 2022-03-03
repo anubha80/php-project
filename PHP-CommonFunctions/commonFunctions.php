@@ -16,7 +16,7 @@ define("FILE_ORDERS_PHP", "orders.php");
 define("FILE_STYLES", FOLDER_CSS . "styles.css");
 define("LOGO", FOLDER_IMAGES . "yogo-logo.png");
 define("FOLDER_ORDERS", "Orders/");
-define("FILE_ORDERS_TXT", "orders.txt");
+define("FILE_ORDERS_TXT", FOLDER_ORDERS."orders.txt");
 
 // Function to prevent page caching
 function noCache(){

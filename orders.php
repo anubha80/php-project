@@ -9,7 +9,7 @@
 // Anubha Dubey(2032178)          2022-02-29                Added product name for bestseller 
 // Anubha Dubey(2032178)          2022-03-03                Added code to display orders in html table form
 // Anubha Dubey(2032178)          2022-03-03                Fixed extra row error in table
-//
+// Anubha Dubey(2032178)          2022-03-03                Created cheat sheet button
 
 
 //constants
@@ -25,7 +25,7 @@ noCache();
 
 // calling top page
 TopPage("Orders");
-echo "<br>";
+echo "<div class='download-btn'><button class='cheat-sheet-btn'>Cheat Sheet</button></div>";
 ?>
 
 <?php

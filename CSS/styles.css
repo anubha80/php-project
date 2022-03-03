@@ -8,6 +8,7 @@
 // Anubha Dubey(2032178)          2022-02-28                Fixed margin for order-confirmation 
 // Anubha Dubey(2032178)          2022-02-29                Added red boundary style for bestseller product
 // Anubha Dubey(2032178)          2022-03-03                Added style for table of total orders
+// Anubha Dubey(2032178)          2022-03-03                Added style and animation for cheat sheet button
 
 
 */
@@ -182,5 +183,26 @@ th{
 }
 .orders-list{
     color: #2F3A8F;
-    margin-top: 2%;
+    margin-top: 5%;
+    margin-left: 50px;
 }
+.download-btn{
+    float: right;
+    margin-right: 50px;
+    margin-top: 25px;
+}
+.cheat-sheet-btn{
+    padding: 5%;
+    font-size: medium;
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    background-color: #2F3A8F;
+    color: white;
+}
+.cheat-sheet-btn {
+      animation: mover 0.3s infinite  alternate;
+  }
+  @keyframes mover {
+      100% { transform: translateY(-5px); }
+  }

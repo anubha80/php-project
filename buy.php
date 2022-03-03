@@ -151,7 +151,7 @@ if (isset($_POST["submitbtn"])) {
 
     if ($errorOccured == false) {
         $total = $price*$quantity;
-        $taxes = $total*LOCAL_TAX/100;
+        $taxes = $total*(LOCAL_TAX/100);
         $grandTotal = $total + $taxes;
         $ordersArr = array($productCode, $firstName, $lastName, $city, $comment, $price, $quantity, $total, $taxes ,$grandTotal );
         
