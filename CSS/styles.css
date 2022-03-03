@@ -7,6 +7,8 @@
 // Anubha Dubey(2032178)          2022-02-28                Added style properties for confirmation page
 // Anubha Dubey(2032178)          2022-02-28                Fixed margin for order-confirmation 
 // Anubha Dubey(2032178)          2022-02-29                Added red boundary style for bestseller product
+// Anubha Dubey(2032178)          2022-03-03                Added style for table of total orders
+
 
 */
 
@@ -150,4 +152,35 @@ label{
 .order-confirmation{
     margin-top: 100px ;
     margin-bottom: 400px;
+}
+
+table{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    border-collapse:collapse;
+    font-size: medium;
+    
+}
+.orders-container{
+    margin-top: 2%;
+}
+table,th,td{
+    color: #EA5C2B;
+    border: 2px solid black;
+    background-color: #EFDAD7;
+}
+th{
+    color: #2F3A8F;
+    background-color: #EA5C2B;
+}
+.order-status{
+    color: #2F3A8F;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 5%;
+}
+.orders-list{
+    color: #2F3A8F;
+    margin-top: 2%;
 }

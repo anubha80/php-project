@@ -7,9 +7,8 @@
 // Anubha Dubey(2032178)          2022-02-26                Validation of user input done
 // Anubha Dubey(2032178)          2022-02-28                Fixed access error for orders.txt file
 
-//
 
-// defining constants 
+// constants 
 define("FOLDER_PHP_COMMON_FUNC", "PHP-CommonFunctions/");
 define("FILE_PHP_COMMON", FOLDER_PHP_COMMON_FUNC . "commonFunctions.php");
 
@@ -153,7 +152,7 @@ if (isset($_POST["submitbtn"])) {
         $total = $price*$quantity;
         $taxes = $total*LOCAL_TAX/100;
         $grandTotal = $total + $taxes;
-        $ordersArr = array($productCode, $firstName, $lastName, $city, $comment, $price, $quantity, $total, $taxes ,$grandTotal );
+        $ordersArr = array($productCode, $firstName, $lastName, $city, $price, $comment, $quantity, $total, $taxes ,$grandTotal );
         
         // converting array to string
         $JSONstring = json_encode($ordersArr); 

@@ -60,7 +60,6 @@ function TopPage($pageName)
 // function for navigation menu containing home, buy and orders page along with company's logo
 function navigationMenu()
 { ?>
-
         <div class="container-main-nav">
             <img src="<?php echo LOGO ?>" class="logo" alt="company-logo">
             <div class="navigation">

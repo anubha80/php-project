@@ -25,6 +25,7 @@ noCache();
 // calling top page function with page name 'Home Page'
 TopPage("Home Page");
 
+
 // Shuffle Product Images
 $product_images  = PRODUCT_IMAGES;
 shuffle($product_images);
