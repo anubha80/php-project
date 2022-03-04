@@ -4,6 +4,7 @@
 
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Created top page, nav menu & footer
+// Anubha Dubey(2032178)          2022-02-04                Created folder for cheatSheet
 
 //
 
@@ -17,6 +18,7 @@ define("FILE_STYLES", FOLDER_CSS . "styles.css");
 define("LOGO", FOLDER_IMAGES . "yogo-logo.png");
 define("FOLDER_ORDERS", "Orders/");
 define("FILE_ORDERS_TXT", FOLDER_ORDERS."orders.txt");
+define("FILE_CHEAT_SHEET", FOLDER_ORDERS."cheatSheet.txt");
 
 // Function to prevent page caching
 function noCache(){

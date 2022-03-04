@@ -10,6 +10,7 @@
 // Anubha Dubey(2032178)          2022-03-03                Added code to display orders in html table form
 // Anubha Dubey(2032178)          2022-03-03                Fixed extra row error in table
 // Anubha Dubey(2032178)          2022-03-03                Created cheat sheet button
+// Anubha Dubey(2032178)          2022-03-04                Created cheat sheet download link
 
 
 //constants
@@ -25,7 +26,9 @@ noCache();
 
 // calling top page
 TopPage("Orders");
-echo "<div class='download-btn'><button class='cheat-sheet-btn'>Cheat Sheet</button></div>";
+
+// echo "<a href='Orders/cheatSheet.txt' download='Anubha-CheatSheet'>Download</a>";
+echo "<div class='download-btn'><a class='cheat-sheet-link' href=".FILE_CHEAT_SHEET." download='CheatSheet_Anubha'>Cheat Sheet</a></div>";
 ?>
 
 <?php

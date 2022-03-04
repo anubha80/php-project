@@ -172,6 +172,7 @@ table,th,td{
     background-color: #EFDAD7;
 }
 th{
+    font-size: 1.2rem;
     color: #2F3A8F;
     background-color: #EA5C2B;
 }
@@ -186,23 +187,24 @@ th{
     margin-top: 5%;
     margin-left: 50px;
 }
-.download-btn{
+.cheat-sheet-link{
     float: right;
     margin-right: 50px;
     margin-top: 25px;
-}
-.cheat-sheet-btn{
-    padding: 5%;
-    font-size: medium;
-    border-radius: 5px;
-    border: none;
-    width: 140px;
-    background-color: #2F3A8F;
+    text-decoration: none;
     color: white;
+    border: 0px solid white;
+    background-color: #2F3A8F;
+    padding : 1%;
+    border-radius: 5px;
 }
-.cheat-sheet-btn {
+.cheat-sheet-link {
       animation: mover 0.3s infinite  alternate;
   }
   @keyframes mover {
       100% { transform: translateY(-5px); }
   }
+
+.white {
+    background-color: white;
+}
