@@ -1,6 +1,6 @@
 <?php
 
-// Revision History
+// REVISION HISTORY
 
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Added php common functions, company name and description
@@ -11,7 +11,8 @@
 // Anubha Dubey(2032178)          2022-03-03                Fixed extra row error in table
 // Anubha Dubey(2032178)          2022-03-03                Created cheat sheet button
 // Anubha Dubey(2032178)          2022-03-04                Created cheat sheet download link
-
+// Anubha Dubey(2032178)          2022-03-05                Changed column subtotal's font color based on price
+//
 
 //constants
 define("FOLDER_PHP_COMMON_FUNC", "PHP-CommonFunctions/");
@@ -25,31 +26,33 @@ include_once(FILE_PHP_COMMON_FUNC);
 noCache();
 
 // calling top page
-TopPage("Orders");
+bodyHTML("Orders");
 
 // echo "<a href='Orders/cheatSheet.txt' download='Anubha-CheatSheet'>Download</a>";
 echo "<div class='download-btn'><a class='cheat-sheet-link' href=".FILE_CHEAT_SHEET." download='CheatSheet_Anubha'>Cheat Sheet</a></div>";
 ?>
 
-<?php
 
-// if(file_exists(FILE_ORDERS_TXT)){
-//     //open file
-//     $fileHandle = fopen(FILE_ORDERS_TXT, "r")
-//     or die('Cannot open the file...');
-//     echo "<h2 class='orders-list'>Orders List</h2>";
-//     $filename = FILE_ORDERS_TXT;
-//     // $filename = 'orders.txt';
-//     $contents = file($filename);
-//     foreach($contents as $line) {
-//         echo $line . "\n";
-//     }
-//     fclose($fileHandle);
-//     }
-//     else {
-//         echo "<h1 class='order-status'>No orders to display... 🐒</h1>";
-//     } 
+<?php
+// changing background color to white
+if(isset($_GET['command'])){
+    $bgColor = $_GET['command'];
+    if ($bgColor=="print"){
+        $bgColor="white";
+        $opacity=0.3;
+    }
+}  
+else
+    $bgColor = '#E3BEC6';
 ?>
+<style type="text/css">
+        body{
+                background-color: <?php echo $bgColor;?>;
+            }
+        img{
+                opacity : <?php echo  $opacity; ?>;
+        }
+</style>
 
 
 <?php
@@ -85,9 +88,26 @@ if(file_exists(FILE_ORDERS_TXT)){
             break;
         }
         for ($i = 0; $i < 10; $i++) {
-            //echo $orderArr[$i]." , ";
-            if ($i==5 || $i==7 || $i==8 || $i==9){
+            if ($i==5 || $i==8 || $i==9){
                 echo "<td>".$orderArr[$i]." $</td>";
+            }
+            else if ($i==7){
+                $fontColor="#E3BEC6";
+                if(isset($_GET['command'])){
+                    $fontColor = $_GET['command'];
+                    if ($fontColor=="color"){
+                        if($orderArr[$i]<100){
+                            $fontColor="red";
+                        }
+                        else if($orderArr[$i]>=100 && $orderArr[$i]<=999.99){
+                            $fontColor="orange";
+                        }
+                        else {
+                            $fontColor="green";
+                        }
+                    }
+                }
+                echo "<td class=$fontColor>".$orderArr[$i]." $</td>";
             }
             else{
                 echo "<td>".$orderArr[$i]."</td>";
@@ -97,9 +117,12 @@ if(file_exists(FILE_ORDERS_TXT)){
     }
     echo "</table>";
     echo "</div>";
+    // closing file
     fclose($fileHandle);
     }
 ?>
+
+
 
 <?php
 //calling footer in the end

@@ -1,5 +1,5 @@
 /* 
-// Revision History
+// REVISION HISTORY
 
 
 // DEVELOPER                      DATE                        COMMENTS
@@ -9,6 +9,7 @@
 // Anubha Dubey(2032178)          2022-02-29                Added red boundary style for bestseller product
 // Anubha Dubey(2032178)          2022-03-03                Added style for table of total orders
 // Anubha Dubey(2032178)          2022-03-03                Added style and animation for cheat sheet button
+// Anubha Dubey(2032178)          2022-03-05                Added classes for font color red orange white green
 
 
 */
@@ -193,7 +194,6 @@ th{
     margin-top: 25px;
     text-decoration: none;
     color: white;
-    border: 0px solid white;
     background-color: #2F3A8F;
     padding : 1%;
     border-radius: 5px;
@@ -206,5 +206,17 @@ th{
   }
 
 .white {
+    background-color: white;
+}
+.green{
+    color: green;
+    background-color: white;
+}
+.orange{
+    color: orange;
+    background-color: white;
+}
+.red{
+    color: red;
     background-color: white;
 }

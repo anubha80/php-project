@@ -1,11 +1,10 @@
 <?php
 
-// Revision History
+// REVISION HISTORY
 
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Created top page, nav menu & footer
 // Anubha Dubey(2032178)          2022-02-04                Created folder for cheatSheet
-
 //
 
 // Constants 
@@ -40,7 +39,7 @@ function checkBestSeller(){
     echo "testing...";
 }
 
-function TopPage($pageName)
+function bodyHTML($pageName)
 {
 ?>
     <!DOCTYPE html>
@@ -72,6 +71,8 @@ function navigationMenu()
         </div>
     <?php
 }
+
+// function for the footer showing name and copyright
 function footer()
 {
     ?>

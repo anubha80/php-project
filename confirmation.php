@@ -1,12 +1,11 @@
 <?php
 
 
-// Revision History
+// REVISION HISTORY
 
 
 // DEVELOPER                      DATE                        COMMENTS
-// Anubha Dubey(2032178)          2022-02-28                Confirmation file created showing order has been placed
-
+// Anubha Dubey(2032178)          2022-02-28                Added confirmation showing order has been placed
 //
 
 // constants
@@ -18,8 +17,9 @@ include_once(FILE_PHP_COMMON_FUNC);
 // calling noCache to prevent page caching
 noCache();
 
-TopPage("Orders Placed")
+bodyHTML("Orders Placed")
 ?>
+
 <p class="order-confirmation">THANK YOU! 🎉 Your order has been placed successfully... 🍒🫐🍓</p>
 
 <?php
