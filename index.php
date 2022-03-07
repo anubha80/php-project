@@ -1,7 +1,19 @@
 <?php
+// error logs
+ini_set('display_errors', 1);
+ini_set('log_errors',1);
+ini_set('error_log',dirname(__FILE__).'/log.txt');
+date_default_timezone_set('America/New_York');
+$time=date('m/d/y h:iA', time());
+$contents = file_get_contents('log.txt');
+$contents .= "\t$time\r";
+error_reporting(E_ALL);
+// echo 9/0;
+?>
+
+<?php
 
 // REVISION HISTORY
-
 
 // DEVELOPER                      DATE                        COMMENTS
 // Anubha Dubey(2032178)          2022-02-26                Added php common functions, company name and description
@@ -33,7 +45,6 @@ shuffle($product_images);
 //print_r($product_images);
 ?> <!-- php tag ends here -->
 
-
 <div class="company-container">
     <h1 class="company-name">🍒🫐🍓 YOGO Yogurt 🍒🫐🍓</h1>
     <h3 class="company-slogan">The yogurt for your gut... 🍒</h3>
@@ -45,6 +56,7 @@ shuffle($product_images);
 
 
 <?php
+// checking for the best seller image to display 2x times
 if($product_images[0]=="strawberry-yogo.png"){
     echo '<h3 class="bestselling-heading">🥇⭐️🏆 BESTSELLER 🏆⭐️🥇</h3>';
     echo '<a href="https://www.google.ca/" target="_blank"><img alt="yogurt-img" class="bestseller-img" src="Images/'.$product_images[0].'"/></a>';

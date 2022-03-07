@@ -3,13 +3,13 @@
 
 
 // DEVELOPER                      DATE                        COMMENTS
-// Anubha Dubey(2032178)          2022-02-26                Added style properties for index and buy page
-// Anubha Dubey(2032178)          2022-02-28                Added style properties for confirmation page
-// Anubha Dubey(2032178)          2022-02-28                Fixed margin for order-confirmation 
-// Anubha Dubey(2032178)          2022-02-29                Added red boundary style for bestseller product
-// Anubha Dubey(2032178)          2022-03-03                Added style for table of total orders
-// Anubha Dubey(2032178)          2022-03-03                Added style and animation for cheat sheet button
-// Anubha Dubey(2032178)          2022-03-05                Added classes for font color red orange white green
+// Anubha Dubey(2032178)          2022-02-26            Added style properties for index and buy page
+// Anubha Dubey(2032178)          2022-02-28            Added style properties for confirmation page
+// Anubha Dubey(2032178)          2022-02-28            Fixed margin for order-confirmation 
+// Anubha Dubey(2032178)          2022-02-29            Added red boundary style for bestseller product
+// Anubha Dubey(2032178)          2022-03-03            Added style for table of total orders
+// Anubha Dubey(2032178)          2022-03-03            Added style and animation for cheat sheet button
+// Anubha Dubey(2032178)          2022-03-05            Added classes for font color red orange white green
 
 
 */
@@ -162,6 +162,7 @@ table{
     border-collapse:collapse;
     font-size: medium;
     margin-bottom: 10%;
+    text-align: left;
 }
 .orders-container{
     margin-top: 2%;
@@ -175,6 +176,11 @@ th{
     font-size: 1.2rem;
     color: #2F3A8F;
     background-color: #EA5C2B;
+    padding: 1% 1% 1% 0.5%;
+    
+}
+td{
+    padding: 0.2%;
 }
 .order-status{
     color: #2F3A8F;

@@ -1,12 +1,25 @@
 <?php
+// error logs
+ini_set('display_errors', 1);
+ini_set('log_errors',1);
+ini_set('error_log',dirname(__FILE__).'/log.txt');
+date_default_timezone_set('America/New_York');
+$time=date('m/d/y h:iA', time());
+$contents = file_get_contents('log.txt');
+$contents .= "\t$time\r";
+error_reporting(E_ALL);
+?>
+
+
+<?php
 
 // REVISION HISTORY
 
 
 // DEVELOPER                      DATE                        COMMENTS
-// Anubha Dubey(2032178)          2022-02-26                Validation of user input done
-// Anubha Dubey(2032178)          2022-02-28                Fixed access error for orders.txt file
-// Anubha Dubey(2032178)          2022-03-03                Fixed comment and price error
+// Anubha Dubey(2032178)          2022-02-26            Validation of user input done
+// Anubha Dubey(2032178)          2022-02-28            Fixed access error for orders.txt file
+// Anubha Dubey(2032178)          2022-03-03            Fixed comment and price error
 //
 
 // constants 
@@ -31,10 +44,11 @@ include_once(FILE_PHP_COMMON);
 // calling noCache() to prevent page caching
 noCache();
 
-//calling topPage function with page name Buy
+// calling main html body function with page name 'Buy'
 bodyHTML("Buy");
 
 // declaring variables for all form fields
+// setting user entered values so that user entered values are not lost incase of an error  
 $productCode = "";
 $firstName = "";
 $lastName = "";
@@ -52,8 +66,10 @@ $errorMsgComment ="";
 $errorMsgPrice = "";
 $errorMsgQuantity = "";
 // declaring variables for tax calulation and subtotal
+//total is the quanity multiplied by price
 $total = "";
 $taxes = "";
+// grandtotal is the amount post tax addition
 $grandTotal = "";
 $ordersArr = "";
 
@@ -151,7 +167,7 @@ if (isset($_POST["submitbtn"])) {
     // validating quantity
     if ($quantity == ""){
         $errorOccured = true;
-        $errorMsgQuantity = "WARNING : Quantity is 0";
+        $errorMsgQuantity = "WARNING : Quantity is empty";
     }
     else {
         if (!(is_numeric($quantity))) {
@@ -242,12 +258,12 @@ if (isset($_POST["submitbtn"])) {
             </div>
         </div>
         <div class="form-buttons">
-                <button class="submit-btn" type="submit" name="submitbtn" value="Save">Submit</button>
-                <button class="reset-btn" type="reset" value="Clear all fields">Reset</button>
+                <button class="submit-btn" type="submit" name="submitbtn" value="">Submit</button>
+                <button class="reset-btn" type="reset" value="">Reset</button>
         </div>
     </form>
-
 </div>
+
 <?php
 // calling footer function at the end of the page
 footer();

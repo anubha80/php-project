@@ -3,8 +3,8 @@
 // REVISION HISTORY
 
 // DEVELOPER                      DATE                        COMMENTS
-// Anubha Dubey(2032178)          2022-02-26                Created top page, nav menu & footer
-// Anubha Dubey(2032178)          2022-02-04                Created folder for cheatSheet
+// Anubha Dubey(2032178)          2022-02-26            Created top page, nav menu & footer
+// Anubha Dubey(2032178)          2022-02-04            Created folder for cheatSheet
 //
 
 // Constants 
@@ -27,36 +27,12 @@ function noCache(){
     header('Content-type: text/html; charset=UTF-8');
 }
 
+// product image array
 define("PRODUCT_IMAGES",  array("cherry-yogo.png", "greek-yogo.png", "orange-yogo.png", "plain-yogo.png", "strawberry-yogo.png"));
 
+// image of the product to be displayed 2x times bigger
 $bestSellerProduct="strawberry-yogo.png";
 
-
-// Generating HTML common code
-// Page Name will go as the title of the page
-
-function checkBestSeller(){
-    echo "testing...";
-}
-
-function bodyHTML($pageName)
-{
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $pageName; ?></title>
-        <link rel="stylesheet" type="text/css" href="<?php echo FILE_STYLES; ?>">
-    </head>
-
-    <body class="">
-    <?php
-    navigationMenu();
-}
 
 // function for navigation menu containing home, buy and orders page along with company's logo
 function navigationMenu()
@@ -71,7 +47,37 @@ function navigationMenu()
         </div>
     <?php
 }
+?>
 
+<?php
+// Generating HTML common code
+// Page Name will go as the title of the page
+function checkBestSeller(){
+    echo "testing...";
+}
+?>
+
+<?php
+function bodyHTML($pageName)
+{
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $pageName; ?></title>
+        <link rel="stylesheet" type="text/css" href="<?php echo FILE_STYLES; ?>">
+    </head>
+    <body>
+    <?php
+    navigationMenu();
+}
+?>
+
+<?php
 // function for the footer showing name and copyright
 function footer()
 {

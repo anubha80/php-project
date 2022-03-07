@@ -1,18 +1,33 @@
 <?php
+// error logs
+ini_set('display_errors', 1);
+ini_set('log_errors',1);
+ini_set('error_log',dirname(__FILE__).'/log.txt');
+date_default_timezone_set('America/New_York');
+$time=date('m/d/y h:iA', time());
+$contents = file_get_contents('log.txt');
+$contents .= "\t$time\r";
+error_reporting(E_ALL);
+// require 'demo.com';
+?>
+
+<?php
 
 // REVISION HISTORY
 
 // DEVELOPER                      DATE                        COMMENTS
-// Anubha Dubey(2032178)          2022-02-26                Added php common functions, company name and description
-// Anubha Dubey(2032178)          2022-02-28                Updated best seller product image to appear 100%
-// Anubha Dubey(2032178)          2022-02-29                Fixed error in best seller product image, added CSS for the same 
-// Anubha Dubey(2032178)          2022-02-29                Added product name for bestseller 
-// Anubha Dubey(2032178)          2022-03-03                Added code to display orders in html table form
-// Anubha Dubey(2032178)          2022-03-03                Fixed extra row error in table
-// Anubha Dubey(2032178)          2022-03-03                Created cheat sheet button
-// Anubha Dubey(2032178)          2022-03-04                Created cheat sheet download link
-// Anubha Dubey(2032178)          2022-03-05                Changed column subtotal's font color based on price
-//
+// Anubha Dubey(2032178)          2022-02-26              Added php common functions, company name and description
+// Anubha Dubey(2032178)          2022-02-28              Updated best seller product image to appear 100%
+// Anubha Dubey(2032178)          2022-02-29              Fixed error in best seller product image, added CSS for the same 
+// Anubha Dubey(2032178)          2022-02-29              Added product name for bestseller 
+// Anubha Dubey(2032178)          2022-03-03              Added code to display orders in html table form
+// Anubha Dubey(2032178)          2022-03-03              Fixed extra row error in table
+// Anubha Dubey(2032178)          2022-03-03              Created cheat sheet button
+// Anubha Dubey(2032178)          2022-03-04              Created cheat sheet download link
+// Anubha Dubey(2032178)          2022-03-05              Changed column subtotal's font color based on price
+// Anubha Dubey(2032178)          2022-03-06              Removed hard coded orders array length
+
+
 
 //constants
 define("FOLDER_PHP_COMMON_FUNC", "PHP-CommonFunctions/");
@@ -25,7 +40,7 @@ include_once(FILE_PHP_COMMON_FUNC);
 // calling noCache() to prevent page caching 
 noCache();
 
-// calling top page
+// calling main html body function with page name 'Orders'
 bodyHTML("Orders");
 
 // echo "<a href='Orders/cheatSheet.txt' download='Anubha-CheatSheet'>Download</a>";
@@ -34,7 +49,8 @@ echo "<div class='download-btn'><a class='cheat-sheet-link' href=".FILE_CHEAT_SH
 
 
 <?php
-// changing background color to white
+// changing body's background color to white and opacity to 0.3
+// Note : ONLY changing body bg color and not the table bg color or navigation bg color
 if(isset($_GET['command'])){
     $bgColor = $_GET['command'];
     if ($bgColor=="print"){
@@ -53,7 +69,6 @@ else
                 opacity : <?php echo  $opacity; ?>;
         }
 </style>
-
 
 <?php
 if (filesize(FILE_ORDERS_TXT) == 0){
@@ -77,17 +92,17 @@ if(file_exists(FILE_ORDERS_TXT)){
             echo"</tr>";
 
     //opening orders.txt file
-    $fileHandle = fopen(FILE_ORDERS_TXT, "r")
-    or die('Cannot open the file...');
-    
+    $fileHandle = fopen(FILE_ORDERS_TXT, "r") or die('Cannot open the file...');
     while(!feof($fileHandle)) {
         $line = fgets($fileHandle);
         $orderArr= json_decode($line);
         echo "<tr>";
-        if (empty($orderArr)) {
-            break;
-        }
-        for ($i = 0; $i < 10; $i++) {
+        // if (empty($orderArr)) {
+        //     break;
+        // }
+        // calculating the orders array length
+        $orderArrLen=count((array)$orderArr);
+        for ($i = 0; $i < $orderArrLen ; $i++) {
             if ($i==5 || $i==8 || $i==9){
                 echo "<td>".$orderArr[$i]." $</td>";
             }
@@ -115,14 +130,12 @@ if(file_exists(FILE_ORDERS_TXT)){
         }
         echo"</tr>";
     }
-    echo "</table>";
-    echo "</div>";
     // closing file
     fclose($fileHandle);
+    echo "</table>";
+    echo "</div>";
     }
 ?>
-
-
 
 <?php
 //calling footer in the end
